@@ -6,22 +6,12 @@ import LoginForm from './LoginForm';
 import {sendCredentials} from 'redux/example/actions';
 
 const Login = (props) => {
-    const {tokken, sendCredentials} = props;
+    const {token, sendCredentials} = props;
 
     const [enteredName, setEnteredName] = useState('');
     const [enteredPassword, setEteredPassword] = useState('');
-    const [token, setToken] = useState('');
 
     const submitHandler = props => {
-        /*axios.post('http://localhost:8080/auth/login', {username: state.username, password: state.password})
-            .then(response => {
-                console.log(response.token);
-                setState({token: response.token})
-        })
-        
-            const ran = Math.random();
-            setToken(prevState => ran);
-         console.log(enteredName, enteredPassword, token);*/
         sendCredentials({username: enteredName, password: enteredPassword});
     };
 
@@ -38,12 +28,7 @@ const Login = (props) => {
     }
 
     const getAllClickHandler = () => {
-       /* axios.get('http://localhost:8080/users', { headers: {
-            Authorization: this.state.token,
-          }}).then(response => {
-              console.log(response);
-          })*/ 
-          console.log('tok: ' + tokken);   
+          console.log('tok: ' + token);   
     }
 
 
@@ -57,7 +42,7 @@ const Login = (props) => {
 
 }
 
-const mapStateToProps = (state) => ({tokken: state.getToken.token});
+const mapStateToProps = (state) => ({token: state.getToken.token});
 
 const mapDispatchToProps = (dispatch) => ({
     sendCredentials: (data) => dispatch(sendCredentials(data))

@@ -19,7 +19,7 @@ const loginForm = props => {
             <input type='password' placeholder='Enter password' onChange={props.changedPassword}/>
             <br />
             <button onClick={props.submitHandler}>Submit</button>
-            <button onClick={props.getAllClickHandler}>Get All</button>
+            <button onClick={props.getAllClickHandler}>Console token</button>
             <p>Haven't registered yet?</p>
         </div>
     )

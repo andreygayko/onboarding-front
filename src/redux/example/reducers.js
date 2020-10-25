@@ -3,7 +3,7 @@ import { REQUEST_PRODUCT, RECEIVE_PRODUCT, SET_AUTHORIZE, REQUEST_AUTHORIZE } fr
 const initialState = {
   isLoading: false,
   products: [],
-  token: 'abbbra',
+  token: '',
 };
 
 export default function (state = initialState, action) {

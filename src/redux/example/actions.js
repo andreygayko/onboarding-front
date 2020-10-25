@@ -17,15 +17,15 @@ export const setAuthorize = (token) => (dispatch) => {
 
 export const sendCredentials = (data) => async (dispatch) => {
   dispatch(requestAuthorize());
-  /*const result = await axios({
+  const result = await axios({
     method: 'post',
     url: 'http://localhost:8080/auth/login',
     headers: {},
     data: data
-  })*/
+  })
   console.log(data);
-  const token = Math.floor(Math.random()*100);
-  dispatch(setAuthorize(token/*result.data.token*/))
+  //const token = Math.floor(Math.random()*100);
+  dispatch(setAuthorize(result.data.token/*token*/))
 }
 
 export const requestProduct = () => (dispatch) => {
